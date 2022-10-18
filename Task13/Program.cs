@@ -1,29 +1,12 @@
-﻿int GetNumber (string message)
+﻿Console.Write("Введите число: ");
+int num = int.Parse(Console.ReadLine());
+string numStr = Convert.ToString(num);
+int numDigit = numStr.Length;
+if(numDigit > 2)
 {
-    Console.Write(message);
-    return int.Parse(Console.ReadLine());
+    Console.WriteLine($"Третья цифра введённого числа: {numStr[2]}");
 }
-
-int Array(int a, int b)
+else
 {
-    int result = 0;
-    if(b < 3)
-    {
-        Console.WriteLine("Третьей цифры нет");
-    }
-    else
-    {
-        int c = 1;
-        for (int i = b; i > 3; i--)
-        {
-            c = c * 10;
-        }
-        result = (a / c) % 10;
-    }
-    return result;
+    Console.WriteLine("третьей цифры нет");
 }
-
-int number = GetNumber("Введите число: ");
-string str = number.ToString();
-int count = str.Length;
-Console.Write(Array(number, count));
